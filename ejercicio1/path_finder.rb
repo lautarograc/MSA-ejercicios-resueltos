@@ -1,12 +1,10 @@
 class PathFinder
   def initialize(map)
     @map = map
-    @visited = Array.new(@map.length) { Array.new(@map[0].length, false) }
   end
   def find_longest_path
     max_path_length = 0
     max_path_item = ""
-
     @visited = Array.new(@map.length) { Array.new(@map[0].length, false) }
 
     @map.each_with_index do |row, i|
