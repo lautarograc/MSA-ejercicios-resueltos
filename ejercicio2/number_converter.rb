@@ -45,7 +45,7 @@ class NumberConverter
         end
       "#{prefix}#{suffix}"
     when 1_000_000
-      "un millón"
+      "un millon"
     end
   end
 end
