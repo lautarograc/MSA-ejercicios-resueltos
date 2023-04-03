@@ -1,2 +1,5 @@
-# La ejecución del código es según soliticado en la guía de resolución `ruby main.rb <input_file>`
-# Para el testeo se puede ejecutar `ruby board_test.rb`
+### Los ejercicios están escritos en Ruby, para instalarlo en tu sistema operativo, puedes seguir las instrucciones de la página oficial de Ruby:
+## https://www.ruby-lang.org/es/documentation/installation/
+# La ejecución del código es según soliticado en la guía de resolución, por ejemplo:
+## ruby main.rb _input.txt
+### La versión de Ruby utilizada es 3.2.0
