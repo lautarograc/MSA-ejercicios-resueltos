@@ -1,15 +1,15 @@
 ones:
   apocopated: un
   normal: [cero, uno, dos, tres, cuatro, cinco, seis, siete, ocho, nueve]
-teens: [diez, once, doce, trece, catorce, quince, dieciséis, diecisiete, dieciocho, diecinueve]
+teens: [diez, once, doce, trece, catorce, quince, dieciseis, diecisiete, dieciocho, diecinueve]
 tens: [_, diez, veinte, treinta, cuarenta, cincuenta, sesenta, setenta, ochenta, noventa]
 twenties:
-  apocopated: veintiún
-  normal: [veinte, veintiuno, veintidós, veintitrés, veinticuatro, veinticinco, veintiséis, veintisiete, veintiocho, veintinueve]
+  apocopated: veintiun
+  normal: [veinte, veintiuno, veintidos, veintitres, veinticuatro, veinticinco, veintiseis, veintisiete, veintiocho, veintinueve]
 hundreds:
   apocopated: cien
   normal: [_, ciento, doscientos, trescientos, cuatrocientos, quinientos, seiscientos, setecientos, ochocientos, novecientos]
 thousands: mil
 millions:
-  one: un millón
+  one: un millon
 union: y
