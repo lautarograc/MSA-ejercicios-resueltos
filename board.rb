@@ -1,5 +1,6 @@
 require_relative "path_finder"
 require_relative "output_helper"
+
 class Board
   def initialize(filename, lines = [])
     #lines optional parameter is to mock in testing
@@ -42,13 +43,3 @@ class Board
     end
   end
 end
-
-if ARGV.empty?
-  puts "Usage: #{$PROGRAM_NAME} <filename>"
-  exit
-end
-
-filename = ARGV[0]
-
-board = Board.new(filename)
-board.process_boards
