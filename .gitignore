@@ -13,7 +13,8 @@ dist/
 
 # Compiled Python bytecode
 *.py[cod]
-
+#readme.md
+README.md
 # Log files
 *.log
 
