@@ -2,6 +2,6 @@
 ## https://www.ruby-lang.org/es/documentation/installation/
 
 # La ejecución del código es según soliticado en la guía de resolución, por ejemplo:
-## ruby ejercicio.rb _input.txt
+## ruby ejercicio/main.rb _input.txt
 
 ### La versión de Ruby utilizada es 3.2.0
