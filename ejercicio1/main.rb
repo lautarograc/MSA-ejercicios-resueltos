@@ -1,4 +1,6 @@
-require_relative "board"
+# frozen_string_literal: true
+
+require_relative 'board'
 
 if ARGV.empty?
   puts "Usage: #{$PROGRAM_NAME} <filename>"
