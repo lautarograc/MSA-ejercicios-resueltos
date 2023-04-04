@@ -10,7 +10,11 @@ class NumberConverter
     when 10..19
       @data["teens"][number % 10]
     when 20..29
-      @data["twenties"]["normal"][number % 10]
+      if number.between?(20, 29) && number != 21
+        @data["twenties"]["normal"][number % 10]
+      else
+        @data["twenties"]["apocopated"]
+      end
     when 30..99
       prefix = @data["tens"][number / 10]
       suffix =
