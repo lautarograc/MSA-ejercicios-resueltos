@@ -10,11 +10,7 @@ class NumberConverter
     when 10..19
       @data["teens"][number % 10]
     when 20..29
-      if number.between?(20, 29) && number != 21
-        @data["twenties"]["normal"][number % 10]
-      else
-        @data["twenties"]["apocopated"]
-      end
+      @data["twenties"]["normal"][number % 10] if number.between?(20, 29)
     when 30..99
       prefix = @data["tens"][number / 10]
       suffix =
@@ -32,10 +28,13 @@ class NumberConverter
       suffix = number % 100 == 0 ? "" : " #{to_words(number % 100)}"
       "#{prefix}#{suffix}"
     when 1000..999_999
+      thousands = number / 1000
       prefix =
         (
-          unless number / 1000 == 1
-            "#{to_words(number / 1000)} #{@data["thousands"]}"
+          if thousands == 21
+            "#{@data["twenties"]["apocopated"]} #{@data["thousands"]}"
+          elsif thousands != 1
+            "#{to_words(thousands)} #{@data["thousands"]}"
           else
             @data["thousands"]
           end
