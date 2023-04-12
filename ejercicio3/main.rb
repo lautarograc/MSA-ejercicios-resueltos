@@ -7,7 +7,7 @@ class CompareFigures
   def initialize(figure)
     @figure = figure
   end
-  MIRRORED_NUMBERS = [0, nil, 5, nil, nil, 2, nil, 8, nil].freeze
+  MIRRORED_NUMBERS = [0, nil, 5, nil, nil, 2, nil, nil, 8, nil].freeze
   DIGITAL_NUMBERS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].freeze
   def looks_the_same?
     # Convert the number to an array of digits
@@ -19,7 +19,7 @@ class CompareFigures
   end
 end
 
-# Read the input file and check each hour
+# Read the input file and check each element
 def main
   input_file = ARGV[0]
   raise "Usage: ruby main.rb <numbers_file>" if input_file.nil?
