@@ -33,6 +33,10 @@ class NumberConverter
         (
           if thousands == 21
             "#{@data["twenties"]["apocopated"]} #{@data["thousands"]}"
+            #elsif thousands is 31, 41, 51, 61, 71, 81, 91
+          elsif [31, 41, 51, 61, 71, 81, 91].include?(thousands)
+            #eliminate second word of thousands
+            "#{to_words(thousands).split(" ")[0]} #{@data["union"]} #{@data["ones"]["apocopated"]} #{@data["thousands"]}"
           elsif thousands != 1
             "#{to_words(thousands)} #{@data["thousands"]}"
           else
