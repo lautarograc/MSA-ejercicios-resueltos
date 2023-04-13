@@ -1,12 +1,17 @@
+#require "byebug"
 class NumberConverter
   def initialize(data)
     @data = data
   end
 
-  def to_words(number)
+  def to_words(number, apocopated = "normal")
     case number
     when 0..9
-      @data["ones"]["normal"][number]
+      if apocopated == "apocopated"
+        @data["ones"]["apocopated"]
+      else
+        @data["ones"]["normal"][number]
+      end
     when 10..19
       @data["teens"][number % 10]
     when 20..29
@@ -25,7 +30,14 @@ class NumberConverter
             @data["hundreds"]["normal"][number / 100]
           end
         )
-      suffix = number % 100 == 0 ? "" : " #{to_words(number % 100)}"
+      suffix =
+        number % 100 == 0 ?
+          "" :
+          if apocopated == "normal"
+            " #{to_words(number % 100)}"
+          else
+            " #{to_words(number % 100, "apocopated")}"
+          end
       "#{prefix}#{suffix}"
     when 1000..999_999
       thousands = number / 1000
@@ -33,14 +45,19 @@ class NumberConverter
         (
           if thousands == 21
             "#{@data["twenties"]["apocopated"]} #{@data["thousands"]}"
-            #elsif thousands is 31, 41, 51, 61, 71, 81, 91
-          elsif [31, 41, 51, 61, 71, 81, 91].include?(thousands)
+          elsif [31, 41, 51, 61, 71, 81, 91].include?(thousands % 100)
             #eliminate second word of thousands
-            "#{to_words(thousands).split(" ")[0]} #{@data["union"]} #{@data["ones"]["apocopated"]} #{@data["thousands"]}"
+            "#{to_words(thousands / 10 * 10)} #{@data["union"]} #{@data["ones"]["apocopated"]} #{@data["thousands"]}"
+          elsif thousands % 100 == 21
+            "#{@data["hundreds"]["normal"][thousands / 100]} #{@data["twenties"]["apocopated"]} #{@data["thousands"]}"
           elsif thousands != 1
-            "#{to_words(thousands)} #{@data["thousands"]}"
+            if thousands % 10 == 1
+              "#{to_words(thousands, "apocopated")} #{@data["thousands"]}"
+            else
+              "#{to_words(thousands)} #{@data["thousands"]}"
+            end
           else
-            @data["thousands"]
+            "#{@data["thousands"]}"
           end
         )
       suffix =
