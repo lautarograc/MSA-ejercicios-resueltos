@@ -1,8 +1,14 @@
+import sys
 from consecutive_courtains import ConsecutiveCourtains
 
+if len(sys.argv) < 2:
+    print("Usage: python filename.py <file_path>")
+    sys.exit()
+
+file_path = sys.argv[1]
 counter = ConsecutiveCourtains()
 
-with open('ejercicio5/test.txt', 'r') as f:
+with open(file_path, 'r') as f:
     lines = f.readlines()
 
 output = ''
