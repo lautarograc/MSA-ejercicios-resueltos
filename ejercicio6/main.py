@@ -32,10 +32,10 @@ def read_input_file(input_file):
 
 def main():
     cases = read_input_file(sys.argv[1])
-    print(cases)
     for case, wall, graffities in cases:
         clean_wall = CleanWall(wall, graffities)
-        print("Case #{}: {}".format(case, clean_wall.calculate_clean_wall()))
+        # print format should be: 1. 100
+        print(f"{case}. {clean_wall.calculate_clean_wall()}")
 
 if __name__ == "__main__":
     main()
