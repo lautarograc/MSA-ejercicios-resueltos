@@ -6,7 +6,7 @@
 ## Solución ejercicio entrada:
 
 ¿Podrías decirnos cuál es el resultado de ejecutar el siguiente pseudocódigo? (suponiendo que la máquina tiene los recursos suficientes para terminar de ejecutarlo). Por favor no olvides comentarnos cuál fue tu razonamiento para llegar al resultado.
-
+```
 function puzzle(N) {
 .A = 1
 .B = 1
@@ -26,12 +26,12 @@ print puzzle(10)
 print puzzle(100)
 print puzzle(pow(2022, 100)) // 2022 elevado a la 100
 
-(los puntos son para identación)
 
 ====== Output ======
 30520
 720820623
 ???
+```
 
 
 SOLUCIÓN (python):
